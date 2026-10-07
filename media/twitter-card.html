@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Combiner Twitter Card</title>
+    <style>
+      :root {
+        --surface: #1a1a19;
+        --panel: #222221;
+        --line: #383835;
+        --text-primary: #ffffff;
+        --text-secondary: #c3c2b7;
+        --text-muted: #8f8e86;
+        --better: #3987e5; /* diverging pole: lower is better */
+        --worse: #e66767; /* diverging pole: higher is worse */
+        --code-tag: #8f8e86;
+        --code-attr: #9085e9;
+        --code-str: #c3c2b7;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        width: 1200px;
+        height: 675px;
+        background: var(--surface);
+        color: var(--text-primary);
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        padding: 44px 52px 36px;
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        grid-template-rows: 1fr auto;
+        column-gap: 48px;
+        overflow: hidden;
+      }
+      .eyebrow { font: 600 15px/1 'Cascadia Code', Consolas, monospace; color: var(--better); letter-spacing: 0.02em; }
+      h1 { font-size: 40px; line-height: 1.12; margin: 14px 0 12px; font-weight: 700; letter-spacing: -0.02em; }
+      .lede { font-size: 18.5px; line-height: 1.45; color: var(--text-secondary); margin: 0 0 24px; }
+      .code {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 16px;
+        font: 13.5px/1.55 'Cascadia Code', Consolas, monospace;
+        color: var(--code-str);
+      }
+      .code .label { font: 600 11px/1 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+      .code .t { color: var(--code-tag); }
+      .code .a { color: var(--code-attr); }
+      .code .arrow { color: var(--text-muted); margin: 8px 0; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; }
+      .code .after { color: var(--text-primary); }
+      .stats { display: flex; gap: 32px; margin-top: 24px; }
+      .stat .num { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+      .stat .cap { font-size: 13.5px; color: var(--text-secondary); margin-top: 2px; }
+      .chart-title { font-size: 17px; font-weight: 600; margin: 4px 0 2px; }
+      .chart-sub { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 10px; }
+      svg text { font-family: 'Segoe UI', system-ui, sans-serif; }
+      footer {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      footer .repo { color: var(--text-secondary); font-family: 'Cascadia Code', Consolas, monospace; }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="eyebrow">vite-plugin-tailwind-combiner</div>
+      <h1>Repeated Tailwind class lists → one class</h1>
+      <p class="lede">A Vite build plugin. It finds class lists that repeat in your HTML and copies their compiled CSS, including hover, md and dark variants, into a single class per list.</p>
+      <div class="code">
+        <div class="label">Built HTML</div>
+        <div><span class="t">&lt;div</span> <span class="a">class</span>="flex items-center justify-between rounded-lg border bg-white p-4 shadow-sm hover:shadow-md md:p-6"<span class="t">&gt;</span></div>
+        <div class="arrow">↓ after the plugin</div>
+        <div class="after"><span class="t">&lt;div</span> <span class="a">class</span>="t-opt-c881d6"<span class="t">&gt;</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">1.86 MB → 805 kB</div><div class="cap">HTML size (uncompressed)</div></div>
+        <div class="stat"><div class="num">−85%</div><div class="cap">class names in the DOM</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="chart-title">Change vs. a plain Tailwind build</div>
+      <div class="chart-sub">Lower is better · 12,000-element page · Chromium 152 · medians of 40 runs</div>
+      <svg id="chart" width="552" height="460" role="img" aria-label="Bar chart of percentage change for each metric"></svg>
+    </section>
+
+    <footer>
+      <span>Runtime changes significant at p &lt; 0.001 (Mann–Whitney) · gzip level 6 · Brotli level 11</span>
+      <span class="repo">github.com/gkurt/vite-plugin-tailwind-combiner</span>
+    </footer>
+
+    <script>
+      const groups = [
+        {
+          title: 'RUNTIME',
+          rows: [
+            ['DOMContentLoaded', -22.0],
+            ['Full style recalc', -9.7],
+            ['Re-parse + render', -8.1],
+            ['Layout', -2.4],
+          ],
+        },
+        {
+          title: 'HTML TRANSFER SIZE',
+          rows: [
+            ['gzip', -25.2],
+            ['Brotli', +36.6],
+          ],
+        },
+      ]
+
+      const NS = 'http://www.w3.org/2000/svg'
+      const svg = document.getElementById('chart')
+      const W = 552
+      const labelW = 150
+      const plotX0 = labelW
+      const plotX1 = W - 64 // room for value labels on the right
+      const min = -40, max = 40
+      const x = (v) => plotX0 + ((v - min) / (max - min)) * (plotX1 - plotX0)
+      const rowH = 50, barH = 18, groupGap = 40, headH = 28
+      const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim()
+
+      const el = (tag, attrs, text) => {
+        const n = document.createElementNS(NS, tag)
+        for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v)
+        if (text != null) n.textContent = text
+        svg.append(n)
+        return n
+      }
+
+      // Bar with a 4px rounded data-end; the end at the zero baseline stays square.
+      const bar = (v, y) => {
+        const x0 = x(0), x1 = x(v), r = Math.min(4, Math.abs(x1 - x0))
+        const dir = Math.sign(v)
+        const tip = x1 - dir * r
+        const d = `M${x0},${y} H${tip} Q${x1},${y} ${x1},${y + r} V${y + barH - r} Q${x1},${y + barH} ${tip},${y + barH} H${x0} Z`
+        el('path', { d, fill: v < 0 ? css('--better') : css('--worse') })
+      }
+
+      let y = 0
+      const zeroTop = 0
+      for (const [gi, g] of groups.entries()) {
+        if (gi) y += groupGap
+        el('text', { x: 0, y: y + 14, fill: css('--text-muted'), 'font-size': 11.5, 'font-weight': 600, 'letter-spacing': '0.08em' }, g.title)
+        y += headH
+        for (const [label, v] of g.rows) {
+          const by = y + (rowH - barH) / 2
+          el('text', { x: 0, y: by + barH - 3, fill: css('--text-secondary'), 'font-size': 15 }, label)
+          bar(v, by)
+          const tx = v < 0 ? x(v) - 8 : x(v) + 8
+          el(
+            'text',
+            {
+              x: tx,
+              y: by + barH - 3,
+              fill: css('--text-primary'),
+              'font-size': 15,
+              'font-weight': 600,
+              'text-anchor': v < 0 ? 'end' : 'start',
+            },
+            `${v > 0 ? '+' : '−'}${Math.abs(v).toFixed(1)}%`,
+          )
+          y += rowH
+        }
+      }
+      // Zero baseline and annotations.
+      el('line', { x1: x(0), x2: x(0), y1: zeroTop + 18, y2: y + 4, stroke: css('--text-muted'), 'stroke-width': 1 })
+      el('text', { x: x(0) - 10, y: y + 24, fill: css('--better'), 'font-size': 13.5, 'text-anchor': 'end' }, '← faster / smaller')
+      el('text', { x: x(0) + 10, y: y + 24, fill: css('--worse'), 'font-size': 13.5 }, 'larger →')
+    </script>
+  </body>
+</html>
