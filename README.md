@@ -17,8 +17,10 @@ same long Tailwind class list, collapses each list into one generated class
 Install from GitHub:
 
 ```bash
-npm install -D github:gkurt/vite-plugin-tailwind-combiner
+npm install -D --allow-git=root github:gkurt/vite-plugin-tailwind-combiner
 ```
+
+npm 12 and later refuse git dependencies unless you pass `--allow-git`; older npm versions don't need the flag.
 
 Or copy `vitePluginTailwindCombiner.js` into your project and install its only dependency,
 `npm install -D postcss`. Then import it from `vite-plugin-tailwind-combiner` or from your local
@@ -198,3 +200,7 @@ Even when Brotli makes the transfer bigger, download + decode time still goes do
 browser has fewer bytes to decompress. The extra 2.3 kB costs about 2 ms on a 10 Mbit/s link,
 less than the parse time saved. All of these runs are on localhost; a slow link would favour
 whichever variant transfers fewer bytes.
+
+## License
+
+MIT

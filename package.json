@@ -35,5 +35,6 @@
     "tailwindcss",
     "benchmark",
     "css"
-  ]
+  ],
+  "license": "MIT"
 }
