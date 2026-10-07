@@ -1,6 +1,6 @@
-# vite-plugin-tailwind-combiner
-
 ![Repeated Tailwind class lists collapsed into one class: −22% DOMContentLoaded, −9.7% style recalc, −25% gzip size, +37% Brotli size on a 12,000-element page](media/twitter-card.png)
+
+# vite-plugin-tailwind-combiner
 
 A Vite **build** plugin for benchmarking. It finds elements in your built HTML that share the
 same long Tailwind class list, collapses each list into one generated class
