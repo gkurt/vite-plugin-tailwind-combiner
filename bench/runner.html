@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combiner Benchmark</title>
+    <style>
+      :root { --bg: #fff; --fg: #111; --muted: #666; --line: #ddd; --good: #0a7d32; --bad: #b42318; }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #111; --fg: #eee; --muted: #999; --line: #333; --good: #4ade80; --bad: #f87171; }
+      }
+      body { margin: 0; padding: 16px; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, sans-serif; }
+      h1 { font-size: 18px; margin: 0 0 4px; }
+      #status { color: var(--muted); margin-bottom: 12px; }
+      table { border-collapse: collapse; margin-bottom: 16px; }
+      th, td { padding: 4px 10px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+      th:first-child, td:first-child { text-align: left; }
+      .good { color: var(--good); } .bad { color: var(--bad); } .muted { color: var(--muted); }
+      #stage { overflow: auto; border: 1px solid var(--line); max-width: 100%; }
+      iframe { width: 1280px; height: 800px; border: 0; display: block; }
+    </style>
+  </head>
+  <body>
+    <h1>vite-plugin-tailwind-combiner benchmark</h1>
+    <div id="status">Starting…</div>
+    <div id="out"></div>
+    <div id="stage"><iframe id="frame"></iframe></div>
+
+    <script type="module">
+      const params = new URLSearchParams(location.search)
+      const ROUNDS = Number(params.get('rounds')) || 20
+      const WARMUP = Number(params.get('warmup')) || 3
+      const REPS = Number(params.get('reps')) || 5 // micro-benchmark repetitions per load
+      const MEMORY = params.get('memory') !== '0'
+      const ENC = ['gzip', 'br'].includes(params.get('enc')) ? params.get('enc') : 'none' // HTML content-encoding
+      const VARIANTS = ['baseline', 'optimized']
+
+      const frame = document.getElementById('frame')
+      const status = (s) => (document.getElementById('status').textContent = s)
+      // Two rendered frames, or give up after 1 s (no frames are produced while hidden).
+      const nextFrame = (win) =>
+        Promise.race([
+          new Promise((r) => win.requestAnimationFrame(() => win.requestAnimationFrame(r))),
+          new Promise((r) => setTimeout(r, 1000)),
+        ])
+      let visibilityChanges = 0
+      document.addEventListener('visibilitychange', () => visibilityChanges++)
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+      // Hidden pages stop rendering frames, so never measure while hidden.
+      const whenVisible = () =>
+        document.visibilityState === 'visible'
+          ? Promise.resolve()
+          : new Promise((r) => {
+              status('Paused: page is hidden. Open the browser pane to continue.')
+              document.addEventListener('visibilitychange', function on() {
+                if (document.visibilityState !== 'visible') return
+                document.removeEventListener('visibilitychange', on)
+                r()
+              })
+            })
+
+      const samples = {} // variant -> metric -> number[]
+      const info = {}
+      const memory = {}
+      window.__bench = { done: false, samples, info, memory }
+
+      function record(variant, metric, value) {
+        ;((samples[variant] ??= {})[metric] ??= []).push(value)
+      }
+
+      function load(variant, round) {
+        return new Promise((resolve) => {
+          frame.onload = () => resolve(frame.contentWindow)
+          frame.src = `/${variant}/index.html?r=${round}&enc=${ENC}`
+        })
+      }
+
+      const median = (xs) => {
+        const s = [...xs].sort((a, b) => a - b)
+        const m = s.length >> 1
+        return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2
+      }
+      const quantile = (xs, q) => {
+        const s = [...xs].sort((a, b) => a - b)
+        const pos = (s.length - 1) * q
+        const lo = Math.floor(pos)
+        return s[lo] + (s[Math.ceil(pos)] - s[lo]) * (pos - lo)
+      }
+
+      // Times `fn` REPS times inside the frame and returns the median (ms).
+      function micro(win, setup, fn) {
+        const times = []
+        for (let i = 0; i < REPS; i++) {
+          setup?.()
+          const t0 = win.performance.now()
+          fn()
+          times.push(win.performance.now() - t0)
+        }
+        return median(times)
+      }
+
+      async function measure(variant, round, keep) {
+        await whenVisible()
+        const changesBefore = visibilityChanges
+        const win = await load(variant, round)
+        await nextFrame(win)
+        await sleep(50)
+        const doc = win.document
+        const nav = win.performance.getEntriesByType('navigation')[0]
+        const fcp = win.performance.getEntriesByName('first-contentful-paint')[0]
+        const flush = () => doc.body.getBoundingClientRect().width + doc.body.offsetHeight
+
+        if (!info[variant]) {
+          const els = doc.querySelectorAll('[class]')
+          let classTokens = 0
+          let classChars = 0
+          for (const el of els) {
+            classTokens += el.classList.length
+            classChars += el.getAttribute('class').length
+          }
+          info[variant] = {
+            htmlBytes: nav.decodedBodySize,
+            encodedBytes: nav.encodedBodySize,
+            transferBytes: nav.transferSize,
+            elements: doc.getElementsByTagName('*').length,
+            classTokens,
+            classChars,
+          }
+        }
+
+        // Rule that matches every element, so toggling a class on <html> forces
+        // selector matching + style recalc for the whole tree (no layout change).
+        const style = doc.createElement('style')
+        style.textContent = 'html.bench-x * { --bench-x: 1; }'
+        doc.head.append(style)
+        flush()
+        const restyle = micro(win, null, () => {
+          doc.documentElement.classList.toggle('bench-x')
+          flush()
+        })
+
+        // Rebuild the whole layout tree: style + layout for every element.
+        const reattach = micro(
+          win,
+          () => {
+            doc.body.style.display = 'none'
+            flush()
+          },
+          () => {
+            doc.body.style.display = ''
+            flush()
+          },
+        )
+
+        // Re-parse the full body markup and render it.
+        const markup = doc.body.innerHTML
+        const reparse = micro(
+          win,
+          () => {
+            doc.body.textContent = ''
+            flush()
+          },
+          () => {
+            doc.body.innerHTML = markup
+            flush()
+          },
+        )
+
+        // Discard the sample if the page was hidden at any point while it was taken.
+        if (document.visibilityState !== 'visible' || visibilityChanges !== changesBefore) return false
+        if (!keep) return true
+        record(variant, 'HTML parse (responseEnd → domInteractive)', nav.domInteractive - nav.responseEnd)
+        record(variant, 'HTML download (responseStart → responseEnd)', nav.responseEnd - nav.responseStart)
+        record(variant, 'DOMContentLoaded', nav.domContentLoadedEventEnd)
+        if (fcp) record(variant, 'First contentful paint', fcp.startTime)
+        record(variant, 'Load event end', nav.loadEventEnd)
+        record(variant, 'Full restyle (selector match + recalc)', restyle)
+        record(variant, 'Rebuild layout tree (style + layout)', reattach)
+        record(variant, 'innerHTML re-parse + style + layout', reparse)
+        return true
+      }
+
+      // Mann–Whitney U, two-sided, normal approximation. Returns p-value.
+      function mannWhitney(a, b) {
+        const all = [...a.map((v) => [v, 0]), ...b.map((v) => [v, 1])].sort((x, y) => x[0] - y[0])
+        const ranks = new Array(all.length)
+        for (let i = 0; i < all.length; ) {
+          let j = i
+          while (j + 1 < all.length && all[j + 1][0] === all[i][0]) j++
+          for (let k = i; k <= j; k++) ranks[k] = (i + j) / 2 + 1
+          i = j + 1
+        }
+        let ra = 0
+        all.forEach(([, g], i) => g === 0 && (ra += ranks[i]))
+        const n1 = a.length, n2 = b.length
+        const u = ra - (n1 * (n1 + 1)) / 2
+        const mu = (n1 * n2) / 2
+        const sigma = Math.sqrt((n1 * n2 * (n1 + n2 + 1)) / 12)
+        const z = Math.abs((u - mu) / sigma)
+        // erfc approximation (Abramowitz–Stegun 7.1.26)
+        const t = 1 / (1 + 0.3275911 * (z / Math.SQRT2))
+        const erfc = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 + t * (-1.453152027 + t * 1.061405429)))) * Math.exp(-((z / Math.SQRT2) ** 2))
+        return erfc
+      }
+
+      function summarize() {
+        const metrics = Object.keys(samples.baseline ?? {})
+        const rows = metrics.map((m) => {
+          const a = samples.baseline[m]
+          const b = samples.optimized[m]
+          const ma = median(a), mb = median(b)
+          return {
+            metric: m,
+            baseline: { median: ma, p25: quantile(a, 0.25), p75: quantile(a, 0.75) },
+            optimized: { median: mb, p25: quantile(b, 0.25), p75: quantile(b, 0.75) },
+            changePct: ((mb - ma) / ma) * 100,
+            p: mannWhitney(a, b),
+            n: a.length,
+          }
+        })
+        window.__bench.summary = rows
+        return rows
+      }
+
+      function render(rows) {
+        const f = (x) => x.toFixed(2)
+        const iqr = (s) => `<span class="muted">${f(s.p25)}–${f(s.p75)}</span>`
+        let html = `<table><tr><th>Metric (ms, median)</th><th>Baseline</th><th>IQR</th><th>Optimized</th><th>IQR</th><th>Change</th><th>p</th></tr>`
+        for (const r of rows) {
+          const sig = r.p < 0.05
+          const cls = !sig ? 'muted' : r.changePct < 0 ? 'good' : 'bad'
+          html += `<tr><td>${r.metric}</td><td>${f(r.baseline.median)}</td><td>${iqr(r.baseline)}</td><td>${f(r.optimized.median)}</td><td>${iqr(r.optimized)}</td><td class="${cls}">${r.changePct >= 0 ? '+' : ''}${r.changePct.toFixed(1)}%</td><td class="muted">${r.p < 0.001 ? '<0.001' : r.p.toFixed(3)}</td></tr>`
+        }
+        html += `</table><table><tr><th>Page (as loaded, enc=${ENC})</th><th>HTML bytes</th><th>Encoded body</th><th>Transfer</th><th>Elements</th><th>Class tokens</th><th>Class attr chars</th><th>Memory (UA)</th></tr>`
+        for (const v of VARIANTS) {
+          const i = info[v] ?? {}
+          const mem = memory[v] ? (memory[v] / 1e6).toFixed(2) + ' MB' : 'n/a'
+          html += `<tr><td>${v}</td><td>${i.htmlBytes?.toLocaleString()}</td><td>${i.encodedBytes?.toLocaleString()}</td><td>${i.transferBytes?.toLocaleString()}</td><td>${i.elements?.toLocaleString()}</td><td>${i.classTokens?.toLocaleString()}</td><td>${i.classChars?.toLocaleString()}</td><td>${mem}</td></tr>`
+        }
+        html += '</table>'
+        const sizes = window.__bench.sizes
+        if (sizes) {
+          const labels = { raw: 'uncompressed', gzip6: 'gzip -6', gzip9: 'gzip -9', brotli11: 'brotli -11' }
+          const kb = (n) => (n / 1000).toFixed(2) + ' kB'
+          html += `<table><tr><th>Build output size</th><th>Baseline</th><th>Optimized</th><th>Change</th></tr>`
+          for (const part of ['html', 'css', 'total']) {
+            for (const [enc, label] of Object.entries(labels)) {
+              const a = sizes.baseline[part][enc], b = sizes.optimized[part][enc]
+              const c = ((b - a) / a) * 100
+              html += `<tr><td>${part.toUpperCase()} · ${label}</td><td>${kb(a)}</td><td>${kb(b)}</td><td class="${c < -0.05 ? 'good' : c > 0.05 ? 'bad' : 'muted'}">${c >= 0 ? '+' : ''}${c.toFixed(1)}%</td></tr>`
+            }
+          }
+          html += '</table>'
+        }
+        document.getElementById('out').innerHTML = html
+      }
+
+      async function measureMemory(variant) {
+        if (!crossOriginIsolated || !performance.measureUserAgentSpecificMemory) return
+        await load(variant, 'mem')
+        await sleep(500)
+        try {
+          const result = await Promise.race([performance.measureUserAgentSpecificMemory(), sleep(30000).then(() => null)])
+          if (result) memory[variant] = result.bytes
+        } catch (e) {
+          // Some embedded Chromium builds expose the API but refuse to run it.
+          window.__bench.memoryError = e.message
+        }
+      }
+
+      async function run() {
+        try {
+          window.__bench.sizes = await (await fetch('/sizes.json')).json()
+        } catch {}
+        window.__bench.env = {
+          encoding: ENC,
+          userAgent: navigator.userAgent,
+          crossOriginIsolated,
+          hardwareConcurrency: navigator.hardwareConcurrency,
+          rounds: ROUNDS,
+          warmup: WARMUP,
+          reps: REPS,
+        }
+        for (let round = 0; round < WARMUP + ROUNDS; round++) {
+          const keep = round >= WARMUP
+          // Alternate which variant goes first to cancel out drift.
+          const order = round % 2 ? [...VARIANTS].reverse() : VARIANTS
+          for (const v of order) {
+            status(`${keep ? 'Round ' + (round - WARMUP + 1) + '/' + ROUNDS : 'Warm-up ' + (round + 1) + '/' + WARMUP} · ${v}`)
+            // Retry until a sample is taken while the page stays visible.
+            while (!(await measure(v, round, keep))) {}
+          }
+          if (keep && round > WARMUP) render(summarize())
+        }
+        if (MEMORY) {
+          for (const v of VARIANTS) {
+            status(`Measuring memory · ${v} (can take up to 30 s)`)
+            await measureMemory(v)
+          }
+        }
+        render(summarize())
+        frame.src = 'about:blank'
+        window.__bench.done = true
+        let saved = ''
+        try {
+          const res = await fetch('/results', { method: 'POST', body: JSON.stringify(window.__bench) })
+          if (res.ok) saved = ' · saved to bench/results/' + (await res.text())
+        } catch {}
+        status(`Done · ${ROUNDS} rounds × ${REPS} reps · enc=${ENC} · crossOriginIsolated=${crossOriginIsolated}${saved}`)
+      }
+
+      run().catch((e) => {
+        status('Error: ' + e.message)
+        window.__bench.error = String(e.stack || e)
+      })
+    </script>
+  </body>
+</html>

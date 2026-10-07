@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-tailwind-combiner",
+  "version": "0.1.0",
+  "description": "Vite build plugin that collapses repeated Tailwind class lists into single generated classes (for runtime benchmarking).",
+  "type": "module",
+  "main": "./vitePluginTailwindCombiner.js",
+  "exports": "./vitePluginTailwindCombiner.js",
+  "files": [
+    "vitePluginTailwindCombiner.js"
+  ],
+  "scripts": {
+    "example:build": "vite build example",
+    "example:preview": "vite preview example",
+    "bench:build": "node bench/build.js",
+    "bench:serve": "node bench/serve.js"
+  },
+  "peerDependencies": {
+    "vite": ">=5"
+  },
+  "dependencies": {
+    "postcss": "^8.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "vite": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkurt/vite-plugin-tailwind-combiner.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "tailwindcss",
+    "benchmark",
+    "css"
+  ]
+}

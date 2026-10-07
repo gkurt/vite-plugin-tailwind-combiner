@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Combiner example</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="min-h-screen bg-gray-100 p-8 font-sans">
+    <!-- <div class="flex items-center justify-between p-4"> comment, ignored -->
+    <main class="mx-auto grid max-w-4xl gap-4 space-y-2">
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    <div class="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md md:p-6 dark:bg-gray-900">
+      <span class="text-sm font-medium text-gray-900 group-hover:text-blue-600 truncate">Item</span>
+      <button class="js-toggle inline-flex items-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-blue-500">Open</button>
+    </div>
+    </main>
+    <ul class="mt-8 divide-y divide-gray-200">
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    <li class="px-4 py-2 text-sm text-gray-700 odd:bg-gray-50 w-[calc(100%-1rem)]">Row</li>
+    </ul>
+    <p class="text-xs text-gray-500 italic underline">only once, not optimized</p>
+  </body>
+</html>
